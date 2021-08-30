@@ -2,11 +2,11 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--just-white);
 }
 h1 {
-    font-size: 2.6rem;
+    font-size: 3.6rem;
 }
+
 :root {
     /*COLORES*/
     --primary-color: #222831;
@@ -27,7 +27,8 @@ HEADER
     justify-content: space-between;
     align-items: center;
     height: 10rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
 }
 
 .header__logo-container,
@@ -38,6 +39,7 @@ HEADER
 .header__user-image picture,
 .header__user-image picture img {
     max-width:20rem;
+    color:var(--just-white)
     
 }
 .header__logo-container {
@@ -50,12 +52,33 @@ HEADER
     align-items: center;
     margin-right: 1rem;
     min-width: 10rem;
-}
-.header__perfil-container p {
-    font-size: 1.6rem;
-
     
 }
+.header__perfil-container p {
+    font-size: 1.6rem; 
+}
+
+.search {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+}
+.search__title {
+    font-size: 2.6rem;
+    color:var(--just-white);
+}
+.search__input {
+    width: 75%;
+    height:2.8rem;
+    border:none;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    outline: none;
+ }
+
 
 
 
