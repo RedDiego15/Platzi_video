@@ -7,12 +7,17 @@
     /*COLORES*/
     --primary-color: #222831;
     --just-white: #fff;
+    --carousel-color:#F05454;
 }
+.arrow { display: none; }
 
 html {
     font-size: 62.5%;
     font-family: 'DM Sans',sans-serif;
     background-color:var(--primary-color) ;
+}
+img { 
+    width: 100%;
 }
 h1 {
     font-size: 3.6rem;
@@ -87,6 +92,7 @@ HEADER
     justify-content: space-between;
     align-items: center;
     height: 7rem;
+    margin-bottom: 1.2rem;
 }
 .search__title {
     font-size: 2.6rem;
@@ -103,12 +109,58 @@ HEADER
  /**************
  Carousell
  ******************/
+ .carousel-container {
+     position: relative;
+     height: 30vh;
+     padding:0 1rem;
+ }
+ .carousel-container__title {
+     font-size: 2rem;
+     color: var(--carousel-color);
+     margin-bottom: 1rem;
+ }
+ .carousel-container__list {
+     position: relative;
+     height: 28vh;
+     display: flex;
+     overflow: hidden;
+     scroll-behavior: smooth;
+ }
+ .carousel-container__carousel {
+     position:relative;
+     display:flex; 
+     width: 100%;
+     overflow: hidden;
+     scroll-behavior: smooth;
+     align-items:baseline;
+ }
+.carousel__item {
+    position: relative;
+    min-width: 20%; 
+    height:80%;/* cambio responsive*/
+    transition: 450ms all;
+    box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+    transform-origin: center left; 
+    cursor: pointer;
+ }
+ .carousel-item:hover~.carousel__item {
+    transform: translate3d(5rem,0,0);
+}
+ .carousel-container__carousel:hover .carousel__item {
+    opacity:0.3
+}
+ .carousel-container__carousel:hover .carousel__item:hover {
+     transform: scale(1.2);
+     opacity: 1;
+ }
 
 
-
-
-
-
-
+ .carousel__item .item__img,
+ .carousel__item img {
+     width: 100%;
+     height: 100%;
+     vertical-align: top;
+ }
+ 
 
 
