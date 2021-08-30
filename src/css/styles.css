@@ -143,8 +143,8 @@ HEADER
     transform-origin: center left; 
     cursor: pointer;
  }
- .carousel-item:hover~.carousel__item {
-    transform: translate3d(5rem,0,0);
+ .carousel__item:hover ~ .carousel__item {
+    transform: translate3d(3rem,0,0);
 }
  .carousel-container__carousel:hover .carousel__item {
     opacity:0.3
