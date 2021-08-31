@@ -12,6 +12,42 @@
     <title>Login platzi video</title>
 </head>
 <body>
+    <header class="header">
+        <figure class="header__logo-container">
+            <img src="./src/assets/logo-platzi-video-BW2.png" alt="logo Platzi" srcset="">   
+        </figure>
+    </header>
+    <section class="login">
+        <section class="form-container">
+            <form action="" class="form">
+                <input type="text" class="form__input-mail" id = "mail" name="mail" placeholder="Mail" required autocomplete="email" />
+                <input type="password" class="form__input-paswd" id="password" name="password" placeholder="Password" autocomplete="current-password" required/> 
+                <input type="submit" class="form__submit"  value="Log in"/>
+            </form>
+        </section>
+        
+        <div class="form__remember-me">
+            <label class="remember-me__lbl-remember" for="check">
+            <input type="checkbox" class="remember-me__check-box" id="check">
+                Remember me
+            </label>
+            <a href="/" class="login-options__fgt-paswd">Forget my oassword</a>
+        </div>    
+        <div class="form__login-social-media">
+            <div class="form__login-with">
+                <span></span>
+                <a href="">login with Google</a></div>
+            <div class="form__login-with">
+                <span></span>
+                <a href="">Login with twitter</a></div>
+        </div>
+        <p class="form__register">Dont have an account? <a href="/">Register</a></p>
+    </section>
+    <footer class="login-footer">
+        <a href="">Terms of use</a>
+        <a href="">Private Declaration</a>
+        <a href="">Help Center</a>
+    </footer>
     
 </body>
 </html>
