@@ -12,36 +12,37 @@
     <title>Login platzi video</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header header--login">
         <figure class="header__logo-container">
             <img src="./src/assets/logo-platzi-video-BW2.png" alt="logo Platzi" srcset="">   
         </figure>
     </header>
     <section class="login">
         <section class="login__form-container">
+            <h1>LOG IN </h1>
             <form action="" class="login__form">
-                <input type="text" class="form__input-mail" id = "mail" name="mail" placeholder="Mail" required autocomplete="email" />
-                <input type="password" class="form__input-paswd" id="password" name="password" placeholder="Password" autocomplete="current-password" required/> 
+                <input type="text" class="form__input-mail login__form-input" id = "mail" name="mail" placeholder=" Mail" required autocomplete="email" />
+                <input type="password" class="form__input-paswd login__form-input" id="password" name="password" placeholder=" Password" autocomplete="current-password" required/> 
                 <input type="submit" class="form__submit"  value="Log in"/>
             </form>
-        </section>
         
-        <div class="login__remember-me">
-            <label class="remember-me__lbl-remember" for="check">
-            <input type="checkbox" class="remember-me__check-box" id="check">
-                Remember me
-            </label>
-            <a href="/" class="login-options__fgt-paswd">Forget my oassword</a>
-        </div>    
-        <div class="login__login-social-media">
-            <div class="login-social-media__login-with">
-                <span></span>
-                <a href="">login with Google</a></div>
-            <div class="login-social-media__login-with">
-                <span></span>
-                <a href="">Login with twitter</a></div>
-        </div>
-        <p class="form__register">Dont have an account? <a href="/">Register</a></p>
+        
+            <div class="login__remember-me">
+                <label class="remember-me__lbl-remember" for="check" value="checkbox">
+                    <input type="checkbox" class="remember-me__check-box" id="check"> Remember me
+                </label>
+                <a href="/">Forgot my password</a>
+            </div>    
+            <div class="login__login-social-media">
+                <div class="login-social-media__login-with">
+                    <span class = "google"></span>
+                    <a  href="">Login with Google</a></div>
+                <div class="login-social-media__login-with">
+                    <span class="twitter"></span>
+                    <a href="" >Login with Twitter</a></div>
+            </div>
+            <p class="form__register">Dont have an account? <a href="/">Register</a></p>
+        </section>
     </section>
     <footer class="login-footer">
         <a href="">Terms of use</a>
