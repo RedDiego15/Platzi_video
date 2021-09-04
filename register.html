@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./src/css/styles.css">
     <meta name="description"           
     content="Working in an advance responsive design">
-    <title>Login platzi video</title>
+    <title>Register platzi video</title>
 </head>
 <body>
     <header class="header header--login">
@@ -18,29 +18,21 @@
     </header>
     <section class="login">
         <section class="login__form-container">
-            <h1>LOG IN </h1>
+            <h1>REGISTER </h1>
             <form action="" class="login__form">
+                <input type="text" class="login__form-input" id = "mail" name="name" placeholder="username" required autocomplete="name" />
                 <input type="text" class="form__input-mail login__form-input" id = "mail" name="mail" placeholder=" Mail" required autocomplete="email" />
                 <input type="password" class="form__input-paswd login__form-input" id="password" name="password" placeholder=" Password" autocomplete="current-password" required/> 
-                <input type="submit" class="form__submit"  value="Log in"/>
+                <input type="submit" class="form__submit"  value="Register"/>
             </form>
-        
-        
-            <div class="login__remember-me">
-                <label class="remember-me__lbl-remember" for="check" value="checkbox">
-                    <input type="checkbox" class="remember-me__check-box" id="check"> Remember me
-                </label>
-                <a href="/">Forgot my password</a>
-            </div>    
             <div class="login__login-social-media">
                 <div class="login-social-media__login-with">
                     <span class = "google"></span>
-                    <a  href="">Login with Google</a></div>
+                    <a  href="">Register with Google</a></div>
                 <div class="login-social-media__login-with">
                     <span class="twitter"></span>
-                    <a href="" >Login with Twitter</a></div>
+                    <a href="" >Register with Twitter</a></div>
             </div>
-            <p class="form__register">Dont have an account? <a href="/">Register</a></p>
         </section>
     </section>
     <footer class="login-footer">
