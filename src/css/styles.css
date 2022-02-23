@@ -53,9 +53,8 @@ HEADER
 }
 
 .header__perfil-container, 
-.header__user-image,
-.header__user-image picture img {
-    width: 6rem;
+.header__img{
+    width: 4.5rem;
     height:6rem;
     color:var(--just-white)
     
@@ -108,13 +107,17 @@ HEADER
     margin-bottom: 1.2rem;
 }
 .search__input {
+    background-color: rgba(34, 40, 49, 0.1);
+    border-color: white;
     width: 75%;
     max-width: 70rem;
-    height:2.8rem;
-    border:none;
-    border-radius: 1rem;
+    height:4.8rem;
+    border-radius: 4rem;
     padding: 0 1rem;
     outline: none;
+ }
+ .search__input::placeholder{
+     color: var(--just-white);
  }
  /**************
  Carousell
