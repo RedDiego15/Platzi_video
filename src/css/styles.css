@@ -10,7 +10,7 @@
     --ligth-color-palette: #F05454;
 
 }
-.arrow { display: none; }
+
 
 html {
     font-size: 62.5%;
@@ -126,21 +126,63 @@ HEADER
      position: relative;
      background-color: var(--primary-color);
      height: 80vh;
-     padding:0 1rem;
-     padding-top: 2rem;
+     padding:2rem 1rem 0;
+     ;
  }
- .carousel-container__title {
+ .carousel__title {
      font-size: 2rem;
      color: var(--ligth-color-palette);
      margin-bottom: 1rem;
  }
- .carousel-container__list {
+ .carousel__list {
      position: relative;
      height: 28vh;
      display: flex;
      overflow: hidden;
      scroll-behavior: smooth;
  }
+ .carousel__list .flecha{
+    position: absolute;
+    height: 45%;
+    width: 2.5rem;
+    top: calc(50% - 30%);
+    border: none;
+  background: rgba(0,0,0,0.3);
+  font-size: 25px;
+    color: white;
+    line-height: 40px;
+    cursor: pointer;
+  z-index: 500;
+  transition: .2s ease all;
+  }
+  .carousel__list .flecha-izquierda{
+    left: 0;
+  }
+  .carousel__list .flecha-derecha{
+    right: 0;
+  }
+  .carousel__list .flecha-izquierda:hover,
+  .carousel__list .flecha-derecha:hover
+  {
+    background: rgb(0, 0, 0,.9);
+  }
+
+ .indicadores button{
+    background: white;
+    height: 0.15rem;
+    width: 1rem;
+    cursor: pointer;
+    border:none;
+    margin-right: 2.8px;
+   
+  }
+  .indicadores button:hover,
+  .indicadores .activo{
+    background-color: var(--fondo-myList);
+    transform: scale(1.1);
+  }
+
+
  .carousel-container__carousel {
      position:relative;
      display:flex; 

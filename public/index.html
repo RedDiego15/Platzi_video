@@ -49,12 +49,16 @@
     </main>
 
     <section class="carousel-container">
-        <h3 class="carousel-container__title">My List</h3>
-        <div class="carousel-container__list">
-            <button role="button" id="left-arrow" class="arrow" >
+        <section class="carousel">
+            <div class="carousel__info-content">
+                <h3 class="carousel__title">My List</h3>
+                <div class="indicadores"></div>
+            </div>
+        <div class="carousel__list">
+            <button role="button" id="flecha-izquierda" class="flecha  flecha-izquierda" >
                 <i class="fas fa-angle-left"></i>
-              </button>
-              <div class="carousel-container__carousel">
+            </button>
+            <div class="carousel-container__carousel">
                 <div class="carousel__item">
                     <figure class="item__img">
                         <img src="./src/assets/p1.jpg" alt="img-movie">
@@ -87,11 +91,14 @@
                     <div class="item__details"></div>
                 </div>
               </div>
-            
-            <button role="button" id="rigth-arrow" class="arrow" >
-                <i class="fas fa-angle-right"></i>
-              </button>
+              
+            <button role="button" id="flecha-derecha" class="flecha  flecha-derecha" >
+            <i class="fas fa-angle-right"></i>
+            </button>
+
         </div>
+        </section>
+        
     </section>
 
     
@@ -104,4 +111,7 @@
     },
     })
 </script>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+
 </html>
