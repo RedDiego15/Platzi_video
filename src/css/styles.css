@@ -185,15 +185,15 @@ HEADER
 
 
  .carousel-container__carousel {
-     position:relative;
      display:flex; 
      width: 100%;
      overflow: hidden;
      scroll-behavior: smooth;
-     align-items:baseline;
+     align-items:center;
      ;
  }
-.carousel__item {
+.carousel-item {
+    will-change: opacity;
     position: relative;
     min-width: 20%; 
     height:80%;/* cambio responsive*/
@@ -202,20 +202,38 @@ HEADER
     transform-origin: center left; 
     cursor: pointer;
  }
- .carousel__item:hover ~ .carousel__item {
+ .carousel-container__carousel:hover  .carousel-item:not(:hover) {
     transform: translate3d(3rem,0,0);
+    opacity:0.3;
 }
 
- .carousel-container__carousel:hover .carousel__item:hover {
+.carousel-item:hover {
      transform: scale(1.2);
      opacity: 1;
  }
 
- .carousel__item .item__img,
- .carousel__item img {
+ .carousel-item .item__img,
+ .carousel-item img {
      width: 100%;
      height: 100%;
      vertical-align: top;
+ }
+ .carousel-item__details{
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     width:100%;
+     padding:0.5rem 1rem;
+     top:calc(50%);
+     color:white;
+     line-height: 1.2;
+ }
+ .carousel-item__details--iconos{
+     display: flex;
+     width: 100%;
+ }
+ .carousel-item__details--iconos .details__icon{
+     width:20px;
  }
  /*LOGIN*/ 
 
