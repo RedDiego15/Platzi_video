@@ -140,6 +140,7 @@ HEADER
      display: flex;
      overflow: hidden;
      scroll-behavior: smooth;
+     
  }
  .carousel__list .flecha{
     position: absolute;
@@ -190,6 +191,7 @@ HEADER
      overflow: hidden;
      scroll-behavior: smooth;
      align-items:baseline;
+     ;
  }
 .carousel__item {
     position: relative;
