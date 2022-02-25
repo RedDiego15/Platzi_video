@@ -14,13 +14,13 @@ function createCarousel_info_content(title){
 }
 function templateLeftButton(){
     return(
-    `<button role="button" id="flecha-izquierda" class="flecha  flecha-izquierda" aria-label="Left Align" >
+    `<button role="button" class="flecha  flecha-izquierda" aria-label="Left Align" >
         <i class="fas fa-angle-left"></i>
     </button>`);
 }
 function templateRightButton(){
     return (
-    `<button role="button" id="flecha-derecha" class="flecha  flecha-derecha" aria-label="right Align" >
+    `<button role="button" class="flecha  flecha-derecha" aria-label="right Align" >
         <i class="fas fa-angle-right"></i>
     </button>`);
 }

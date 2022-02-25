@@ -1,3 +1,4 @@
+import {registerImage} from './lazy'
 
 const templateCarouselItem = ({ itemList = [] }) =>{
     const nodes = itemList.map(({
@@ -5,12 +6,12 @@ const templateCarouselItem = ({ itemList = [] }) =>{
     }) => {
         let japanTitle = titles.ja_jp;
         if(japanTitle == undefined)
-            japanTitle = titles.en;         
+            japanTitle = titles.en;
         
         const template =
          `<div class="carousel-item">
             <figure class="item__img">
-                <img src=${posterImage.medium} alt="img-movie">
+                <img data-src=${posterImage.medium} alt="img-movie">
             </figure>
             <div class="carousel-item__details">
                 <div class="carousel-item__details--iconos">
@@ -32,6 +33,8 @@ const templateCarouselItem = ({ itemList = [] }) =>{
             </div>
         </div>`
         const node = createCarousel_itemTemplate(template)
+        const image = node.children[0];
+        registerImage(image);
         return node;
     })
     return nodes

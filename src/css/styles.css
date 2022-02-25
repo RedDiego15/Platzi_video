@@ -19,6 +19,9 @@ html {
 html.wf-active{
     font-family: 'DM+Sans',sans-serif;
 }
+body{
+    background-color: var(--primary-color);
+}
 img { 
     width: 100%;
     height: 100%;
@@ -39,7 +42,6 @@ HEADER
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: var(--primary-color);
     height: 18vh;
     max-width: 100%;
     padding-top: 1.5rem;
@@ -99,7 +101,6 @@ HEADER
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
     min-height: 7rem;
 }
 .search__title {
@@ -125,9 +126,7 @@ HEADER
  ******************/
  .carousel-container {
      position: relative;
-     background-color: var(--primary-color);
      padding:2rem 1rem 0;
-     ;
  }
  .carousel__info-content{
     display: flex;
@@ -254,7 +253,7 @@ HEADER
  }
  /*LOGIN*/ 
 
-.header--login {
+.header--login{
     background-color:var(--primary-color) ;
     margin: 0;
     width:100%;
@@ -409,6 +408,10 @@ HEADER
     min-width: 16rem;
     min-height: 10vh;
     padding-left: 1rem;
+}
+.index-footer{
+    background-color: var(--primary-color);
+    box-shadow: -1px -4px 5px 0px #44333b;
 }
 .login-footer a {
     font-size: 1.2rem;
