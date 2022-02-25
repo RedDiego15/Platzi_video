@@ -1,8 +1,6 @@
-const $indicadores = document.querySelector(".indicadores");
-const $carousel = document.querySelector(".carousel-container__carousel");
 
-const numberOfPages = function numberPages(){
-    const $total_peliculas = document.querySelectorAll('.carousel-item')
+const numberOfPages = function numberPages(carousel) {
+    const $total_peliculas = carousel.querySelectorAll('.carousel-item')
     let numberPages;
     if(screen.width<600){
         numberPages=Math.ceil($total_peliculas.length/4)
@@ -13,7 +11,7 @@ const numberOfPages = function numberPages(){
     }
 }
 
-function pagination(){
+function pagination(indicadores,carousel){
     const number_Pages = numberOfPages();
 
     for(let i=0;i<number_Pages;i++){
@@ -31,4 +29,23 @@ function pagination(){
     }
 }
 
+function giveScroll(indicadores){
+    const $carousel_container__carousel = document.querySelectorAll('.carousel-container__carousel');
+    for (let carousel of $carousel_container__carousel){
+        pagination(indicadores,carousel)
+    }
+
+}
+
+export const create_indicators = ()=>{
+    const $indicadores = document.createElement('div');
+    $indicadores.classList.add('indicadores');
+    giveScroll($indicadores);
+    return $indicadores;
+
+
+
+
+
+}
 

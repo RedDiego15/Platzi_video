@@ -1,12 +1,12 @@
 
 const templateCarouselItem = ({ itemList = [] }) =>{
-    itemList.map(({
+    const nodes = itemList.map(({
         attributes: {titles,posterImage,slug,youtubeVideId,startDate}
     }) => {
         const template =
          `<div class="carousel-item">
             <figure class="item__img">
-                <img src="${posterImage.medium} alt="img-movie">
+                <img src=${posterImage.medium} alt="img-movie">
             </figure>
             <div class="carousel-item__details">
                 <div class="carousel-item__details--iconos">
@@ -27,17 +27,16 @@ const templateCarouselItem = ({ itemList = [] }) =>{
                 <p class="carousel-item__details--date">${startDate}</p>
             </div>
         </div>`
-        return template;
-
-
+        const node = createCarousel_itemTemplate(template)
+        return node;
     })
+    return nodes
    
     
 }
 
-const createCarousel_itemTemplate = ({itemList=[]}) => {
+const createCarousel_itemTemplate = (stringHtml) => {
     const html = document.implementation.createHTMLDocument();
-    const stringHtml = templateCarouselItem({itemList:itemList});
     html.body.innerHTML = stringHtml;
     return html.body.children[0];
 }
@@ -45,7 +44,10 @@ const createCarousel_itemTemplate = ({itemList=[]}) => {
 export function addWholeTemplateCarousel_container({itemList}) {
     const $carousel_container__carousel = document.createElement('div');
     $carousel_container__carousel.classList.add('carousel-container__carousel');
-    const $carousel_item = createCarousel_itemTemplate({itemList:itemList});
-    $carousel_container__carousel.appendChild($carousel_item);
+    const nodes =templateCarouselItem({itemList:itemList});
+    nodes.map((nodo)=>{
+        $carousel_container__carousel.appendChild(nodo);
+    })
+    
     return $carousel_container__carousel;
 }

@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const highestRated = await fetchHighestRated()
 
     console.log(trending)
-    addWholeTemplate({itemList:trending})
+    addWholeTemplate({itemList:trending},'Trending')
     
   
    
