@@ -28,7 +28,7 @@ const templateCarouselItem = ({ itemList = [] }) =>{
                 </div>
                 <p class="carousel-item__details--title">${titles.en}</p>
                 <p class="carousel-item__details--sub-title">${japanTitle}</p>
-                <p class="carousel-item__details--date">Realized date: ${startDate}</p>
+                <p class="carousel-item__details--date">Released date: ${startDate}</p>
             </div>
         </div>`
         const node = createCarousel_itemTemplate(template)
