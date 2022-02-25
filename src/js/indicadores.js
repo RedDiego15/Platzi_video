@@ -1,5 +1,5 @@
 
-const numberOfPages = function numberPages(carousel) {
+export function numberOfPages(carousel) {
     const $total_peliculas = carousel.querySelectorAll('.carousel-item')
     let numberPages;
     if(screen.width<600){
@@ -12,12 +12,13 @@ const numberOfPages = function numberPages(carousel) {
 }
 
 function pagination(indicadores,carousel){
-    const number_Pages = numberOfPages();
+    const number_Pages = numberOfPages(carousel);
 
     for(let i=0;i<number_Pages;i++){
         const indicator = document.createElement('button');
         if(i==0){
             indicator.classList.add('activo')
+            indicator.ariaLevel = 'Indicator of website'
         }
         indicadores.appendChild(indicator)
         indicator.addEventListener('click', e=>{
@@ -29,18 +30,10 @@ function pagination(indicadores,carousel){
     }
 }
 
-function giveScroll(indicadores){
-    const $carousel_container__carousel = document.querySelectorAll('.carousel-container__carousel');
-    for (let carousel of $carousel_container__carousel){
-        pagination(indicadores,carousel)
-    }
-
-}
-
-export const create_indicators = ()=>{
+export const create_indicators = (carousel_container__carousel)=>{
     const $indicadores = document.createElement('div');
     $indicadores.classList.add('indicadores');
-    giveScroll($indicadores);
+    pagination($indicadores,carousel_container__carousel);
     return $indicadores;
 
 

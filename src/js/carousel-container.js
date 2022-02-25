@@ -3,6 +3,10 @@ const templateCarouselItem = ({ itemList = [] }) =>{
     const nodes = itemList.map(({
         attributes: {titles,posterImage,slug,youtubeVideId,startDate}
     }) => {
+        let japanTitle = titles.ja_jp;
+        if(japanTitle == undefined)
+            japanTitle = titles.en;         
+        
         const template =
          `<div class="carousel-item">
             <figure class="item__img">
@@ -23,8 +27,8 @@ const templateCarouselItem = ({ itemList = [] }) =>{
                     
                 </div>
                 <p class="carousel-item__details--title">${titles.en}</p>
-                <p class="carousel-item__details--sub-title">${titles.ja_jp}</p>
-                <p class="carousel-item__details--date">${startDate}</p>
+                <p class="carousel-item__details--sub-title">${japanTitle}</p>
+                <p class="carousel-item__details--date">Realized date: ${startDate}</p>
             </div>
         </div>`
         const node = createCarousel_itemTemplate(template)

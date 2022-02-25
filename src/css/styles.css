@@ -6,8 +6,8 @@
 :root {
     /*COLORES*/
     --primary-color: #222831;
-    --just-white: #fff;
-    --ligth-color-palette: #F05454;
+    --title_Carousel_Color: #F05454;
+    
 
 }
 
@@ -57,7 +57,7 @@ HEADER
 .header__img{
     width: 4.5rem;
     height:6rem;
-    color:var(--just-white)
+    color:white
     
 }
 
@@ -70,7 +70,7 @@ HEADER
     min-width: 10rem;
     
 }
-.header__perfil-container ul{
+.header__list{
     position: absolute;
     display: none;
     list-style: none;
@@ -78,17 +78,17 @@ HEADER
     margin: 9rem 0 0 3.9rem; 
     
 }
-.header__perfil-container ul li a{
+.list__link{
     text-decoration: none;
     font-size: 1.6rem;
-    color: var(--just-white);
+    color: white;
 }
-.header__perfil-container ul li a:hover {
+.list__link:hover {
     text-decoration: underline;
     font-size: 1.8rem;
     color: grey;
 }
-.header__perfil-container:hover ul {
+.header__perfil-container:hover .header__list {
     display: flex;
     flex-direction: column;
 }
@@ -104,7 +104,7 @@ HEADER
 }
 .search__title {
     font-size: 2.6rem;
-    color:var(--just-white);
+    color:white;
     margin-bottom: 1.2rem;
 }
 .search__input {
@@ -118,7 +118,7 @@ HEADER
     outline: none;
  }
  .search__input::placeholder{
-     color: var(--just-white);
+     color: white;
  }
  /**************
  Carousell
@@ -126,13 +126,18 @@ HEADER
  .carousel-container {
      position: relative;
      background-color: var(--primary-color);
-     height: 80vh;
      padding:2rem 1rem 0;
      ;
  }
+ .carousel__info-content{
+    display: flex;
+    justify-content: space-between;
+    height:3rem;
+    margin: 1rem 0;
+ }
  .carousel__title {
      font-size: 2rem;
-     color: var(--ligth-color-palette);
+     color: var(--title_Carousel_Color);
      margin-bottom: 1rem;
  }
  .carousel__list {
@@ -171,16 +176,16 @@ HEADER
 
  .indicadores button{
     background: white;
-    height: 0.15rem;
-    width: 1rem;
+    height: 0.25rem;
+    width: 1.5rem;
     cursor: pointer;
     border:none;
-    margin-right: 2.8px;
+    margin-right: 0.48rem;
    
   }
   .indicadores button:hover,
   .indicadores .activo{
-    background-color: var(--fondo-myList);
+    background-color: var(--title_Carousel_Color);
     transform: scale(1.1);
   }
 
@@ -195,7 +200,6 @@ HEADER
  }
 .carousel-item {
     will-change: opacity;
-    will-change: background;
     position: relative;
     min-width: 20%; 
     height:80%;/* cambio responsive*/
@@ -212,15 +216,12 @@ HEADER
 .carousel-item:hover {
     transform: scale(1.2);
     opacity: 1;
-    background: linear-gradient( to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100% );
 
  }
 
  .carousel-item:hover .carousel-item__details{
      opacity: 1;
-     
  }
-
  .carousel-item .item__img,
  .carousel-item img {
      width: 100%;
@@ -228,19 +229,24 @@ HEADER
      vertical-align: top;
  }
  .carousel-item__details{
-     position: absolute;
-     display: flex;
-     flex-direction: column;
-     width:100%;
-     padding:0.5rem 1rem;
-     top:calc(50%);
-     color:white;
-     line-height: 1.2;
-     opacity: 0;
+     will-change:opacity;
+    position: absolute;
+    display: flex;
+    background: linear-gradient( to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100% );
+    flex-direction: column;
+    justify-content: flex-end;
+    width:100%;
+    padding:0.5rem 1rem;
+    top:0;
+    bottom:0;
+    color:white;
+    transition: 450ms opacity;
+    line-height: 1.2;
+    opacity: 0;
  }
  .carousel-item__details--iconos{
-     display: flex;
-     width: 100%;
+    display: flex;
+    width: 100%;
  }
  .carousel-item__details--iconos .details__icon{
      width:25px;
@@ -398,7 +404,7 @@ HEADER
     position: relative;
     display: flex;
     align-items:center;
-    background-color:var(--ligth-color-palette);
+    background-color:var(--title_Carousel_Color);
     width:100%;
     min-width: 16rem;
     min-height: 10vh;
