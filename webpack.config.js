@@ -11,12 +11,10 @@ module.exports = {
     entry: './src/js/index.js',
     output:{ 
         path: path.resolve(__dirname,'dist'),
-        filename: '[name].js',
-        assetModuleFilename: "assets/images/[hash][ext][query]",
-        clean:true,
+        publicPath: '/dist/',
+        filename: '[name].bundle.js',
     },
     mode: "production",
-    
     resolve :{
         extensions: ['.js'],
         alias: {
@@ -53,6 +51,16 @@ module.exports = {
             template: './public/index.html',
             filename:'./index.html'
         }),
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: './public/login.html',
+            filename:'./login.html'
+        }),
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: './public/register.html',
+            filename:'./register.html'
+        }),
 
         new CopyPlugin({
             patterns:[
@@ -69,7 +77,10 @@ module.exports = {
     ],
     optimization: {
         minimize:true,
-        minimizer:[new CssMinimizerPlugin(),new TerserPlugin()]
+        minimizer:[new CssMinimizerPlugin(),new TerserPlugin()],
+        splitChunks: {
+            chunks:'all'
+        }
     }
     
 
