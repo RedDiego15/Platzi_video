@@ -2,7 +2,7 @@ import registerImage from '@js/lazy.js'
 
 const templateCarouselItem = ({ itemList = [] }) =>{
     const nodes = itemList.map(({
-        attributes: {titles,posterImage,slug,youtubeVideId,startDate}
+        attributes: {titles,posterImage,slug,youtubeVideoId,startDate}
     }) => {
         let japanTitle = titles.ja_jp;
         if(japanTitle == undefined)
@@ -11,16 +11,18 @@ const templateCarouselItem = ({ itemList = [] }) =>{
         const template =
          `<div class="carousel-item">
             <figure class="item__img">
-                <img data-src=${posterImage.medium} data-src-tiny=${posterImage.tiny} alt="img-movie">
+                <img data-src=${posterImage.medium} data-background-img= ../src/assets/carousel-item-placeholder.png  data-src-tiny=${posterImage.tiny} alt="img-movie">
             </figure>
             <div class="carousel-item__details">
                 <div class="carousel-item__details--iconos">
-                    <a href="${youtubeVideId}" class="details__icon">
+                    <a href="https://www.youtube.com/watch?v=${youtubeVideoId}"
+                    data-video-id= ${youtubeVideoId}
+                    class="details__icon">
                         <figure >
                             <img src="../src/assets//play-icon.png" alt="img-movie">
                         </figure>
                     </a>
-                    <a href="${slug}" class="details__icon">
+                    <a href="https://kitsu.io/explore/anime${slug}" class="details__icon">
                         <figure >
                             <img src="../src/assets/plus-icon.png" alt="img-movie">
                         </figure>

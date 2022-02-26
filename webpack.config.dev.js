@@ -33,13 +33,14 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use:[MiniCssExtractPlugin.loader,
+                use:[
+                    'style-loader',
                     'css-loader',
                     ],
             
             },
             {
-                test: /\.png|\.jpg$/,
+                test: /\.png|\.jpg|\.svg$/,
                 type: 'asset/resource'
             },
         ]
@@ -60,7 +61,7 @@ module.exports = {
             ]
         }),
         new MiniCssExtractPlugin({
-            filename:'src/styles.css'
+            filename:'src/[name].css'
         }),
         new Dotenv()
     ],

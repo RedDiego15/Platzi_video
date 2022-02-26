@@ -9,10 +9,11 @@ const observer = new IntersectionObserver((entries) =>{
 const lazyCharge = (entry) =>{
     const image = entry.target.firstElementChild;
     let URL = image.dataset.src;
+    const url_background = image.dataset.backgroundImg
+    image.style.backgroundImage = `url(${url_background})`;
     if(screen.width <600){
         URL = image.dataset.srcTiny;
     }
-    
     image.src = URL;
     observer.unobserve(entry.target)
 
