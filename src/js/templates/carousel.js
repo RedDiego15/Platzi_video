@@ -1,6 +1,6 @@
 
-import {addWholeTemplateCarousel_container} from './carousel-container';
-import {create_indicators,numberOfPages} from './indicadores';
+import addCarouselContainerNode from '@templates/carousel-container.js';
+import {create_indicators,numberOfPages} from '@templates/indicadores.js';
 
 function createCarousel_info_content(title){
     const $carousel_info_content = document.createElement('div');
@@ -32,8 +32,8 @@ const createButtonTemplate = (stringHtml,carousel)=>{
     const $btn = html.body.children[0]
     $btn.addEventListener("click",e => {
         ($btn.classList.contains("flecha-derecha")?
-        carousel.scrollLeft += pageNumber*carousel.offsetWidth:
-        carousel.scrollLeft -= pageNumber*carousel.offsetWidth
+        carousel.scrollLeft += carousel.offsetWidth:
+        carousel.scrollLeft -= carousel.offsetWidth
         )
     })
     return $btn;
@@ -41,8 +41,8 @@ const createButtonTemplate = (stringHtml,carousel)=>{
 
 
 
-export  const addWholeTemplate = ({itemList=[]},title)=>{
-    const $carousel_container__carousel= addWholeTemplateCarousel_container({itemList:itemList});
+const addCarouselNode = ({itemList=[]},title)=>{
+    const $carousel_container__carousel= addCarouselContainerNode({itemList:itemList});
     const $carousel_container = document.querySelector('.carousel-container');
     const $carousel__info_content = createCarousel_info_content(title);
     const $carousel = document.createElement('section');
@@ -64,6 +64,6 @@ export  const addWholeTemplate = ({itemList=[]},title)=>{
     $carousel.appendChild($carousel__list)
     $carousel_container.appendChild($carousel);
 }
-
+export default addCarouselNode;
 
 

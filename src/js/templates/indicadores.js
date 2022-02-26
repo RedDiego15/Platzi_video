@@ -3,7 +3,7 @@ export function numberOfPages(carousel) {
     const $total_peliculas = carousel.querySelectorAll('.carousel-item')
     let numberPages;
     if(screen.width<600){
-        numberPages=Math.ceil($total_peliculas.length/4)
+        numberPages=Math.ceil($total_peliculas.length/3)
         return numberPages;
     }else{
         numberPages=Math.ceil($total_peliculas.length/5)

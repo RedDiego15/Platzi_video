@@ -1,4 +1,4 @@
-import {registerImage} from './lazy'
+import registerImage from '@js/lazy.js'
 
 const templateCarouselItem = ({ itemList = [] }) =>{
     const nodes = itemList.map(({
@@ -11,7 +11,7 @@ const templateCarouselItem = ({ itemList = [] }) =>{
         const template =
          `<div class="carousel-item">
             <figure class="item__img">
-                <img data-src=${posterImage.medium} alt="img-movie">
+                <img data-src=${posterImage.medium} data-src-tiny=${posterImage.tiny} alt="img-movie">
             </figure>
             <div class="carousel-item__details">
                 <div class="carousel-item__details--iconos">
@@ -48,7 +48,7 @@ const createCarousel_itemTemplate = (stringHtml) => {
     return html.body.children[0];
 }
 
-export function addWholeTemplateCarousel_container({itemList}) {
+ function addCarouselContainerNode({itemList}) {
     const $carousel_container__carousel = document.createElement('div');
     $carousel_container__carousel.classList.add('carousel-container__carousel');
     const nodes =templateCarouselItem({itemList:itemList});
@@ -58,3 +58,5 @@ export function addWholeTemplateCarousel_container({itemList}) {
     
     return $carousel_container__carousel;
 }
+
+export default addCarouselContainerNode;

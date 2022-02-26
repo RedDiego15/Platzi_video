@@ -8,12 +8,17 @@ const observer = new IntersectionObserver((entries) =>{
 
 const lazyCharge = (entry) =>{
     const image = entry.target.firstElementChild;
-    const URL = image.dataset.src;
+    let URL = image.dataset.src;
+    if(screen.width <600){
+        URL = image.dataset.srcTiny;
+    }
+    
     image.src = URL;
     observer.unobserve(entry.target)
 
 }
 
-export const registerImage = (image) => {
+const registerImage = (image) => {
     observer.observe(image);
 }
+export default registerImage;

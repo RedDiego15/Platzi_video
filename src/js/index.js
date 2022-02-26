@@ -1,5 +1,6 @@
-import {addWholeTemplate} from './carousel';
-import {fetchPopular, fetchHighestRated,fetchTrending} from './api';
+import addCarouselNode from '@templates/carousel.js';
+import {fetchPopular, fetchHighestRated,fetchTrending} from '@js/api.js';
+import '@styles/styles.css';
 
 
 window.addEventListener('DOMContentLoaded', async () => {
@@ -10,9 +11,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   const highestRated = await fetchHighestRated();
 
  
-  addWholeTemplate({itemList:trending},'Trending');
-  addWholeTemplate({itemList:popular},'Popular');
-  addWholeTemplate({itemList:highestRated},'HighestRated');
+  addCarouselNode({itemList:trending},'Trending');
+  addCarouselNode({itemList:popular},'Popular');
+  addCarouselNode({itemList:highestRated},'HighestRated');
     
   
    

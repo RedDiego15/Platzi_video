@@ -7,8 +7,6 @@
     /*COLORES*/
     --primary-color: #222831;
     --title_Carousel_Color: #F05454;
-    
-
 }
 
 
@@ -174,6 +172,7 @@ HEADER
   }
 
  .indicadores button{
+     will-change: background-color;
     background: white;
     height: 0.25rem;
     width: 1.5rem;
@@ -200,7 +199,7 @@ HEADER
 .carousel-item {
     will-change: opacity;
     position: relative;
-    min-width: 20%; 
+    min-width: 33.33%; 
     height:80%;/* cambio responsive*/
     transition: 450ms all;
     box-shadow: 5px 5px 10px rgba(0,0,0, .3);
@@ -225,10 +224,9 @@ HEADER
  .carousel-item img {
      width: 100%;
      height: 100%;
-     vertical-align: top;
  }
  .carousel-item__details{
-     will-change:opacity;
+    will-change:opacity;
     position: absolute;
     display: flex;
     background: linear-gradient( to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100% );
