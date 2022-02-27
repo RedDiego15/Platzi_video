@@ -381,12 +381,13 @@ HEADER
     background-repeat: no-repeat;
     margin-right: 1rem; 
 }
+/*
 .login-social-media__login-with .google  {
     background-image: url(../assets/google25.svg)
 }
 .login-social-media__login-with .twitter {
     background-image: url(../assets/twitter25.svg)
-}
+}*/
 .form__register a {
     font-size: 1.8rem;
     text-decoration: none;
@@ -421,7 +422,15 @@ HEADER
 .hide{
     display: none;
 }
-
+@media (min-width: 670px) {
+    .header{
+        height:14vh;
+    }
+    .carousel-item{
+        min-width: 20%;
+        max-height: none;
+    }
+  }
  
 
 

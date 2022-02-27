@@ -2,10 +2,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry:{
@@ -15,6 +15,7 @@ module.exports = {
     output:{ 
         path: path.resolve(__dirname,'dist'),
         filename: '[name].bundle.js',
+        assetModuleFilename:"assets/[hash][ext]",
         clean:true
     },
     mode: "production",
@@ -23,7 +24,8 @@ module.exports = {
         alias: {
             '@styles': path.resolve(__dirname, './src/css/'),
             '@js': path.resolve(__dirname, './src/js/'),
-            '@templates': path.resolve(__dirname, './src/js/templates/')
+            '@templates': path.resolve(__dirname, './src/js/templates/'),
+            '@assets': path.resolve(__dirname, './src/assets/')
         }   
     }, 
     module:{
@@ -44,7 +46,7 @@ module.exports = {
             
             },
             {
-                test: /\.png|\.jpg|\.svg$/,
+                test: /\.png|\.jpg$/,
                 type: 'asset/resource'
             },
         ]
@@ -57,12 +59,14 @@ module.exports = {
             minify:true
         }),
         new CopyPlugin({
-            patterns:[
+            patterns: [
                 {
-                    from: path.resolve(__dirname, "src","assets"),
-                    to: "assets"
+                from: path.resolve(__dirname, "src","assets"),
+                to: "assets"
                 }
+            
             ]
+
         }),
         new MiniCssExtractPlugin({
             filename:'src/styles.css'
