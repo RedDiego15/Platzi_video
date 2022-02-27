@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "webpack  --config webpack.config.dev.js",
-    "build": " webpack --mode production --config webpack.config.js",
+    "build": "node ./scripts/create-env.js && webpack --mode production --config webpack.config.js",
     "serve": "serve ."
   },
   "devDependencies": {
