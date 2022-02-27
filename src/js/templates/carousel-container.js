@@ -14,7 +14,7 @@ const templateCarouselItem = ({ itemList = [] }) =>{
         const template =
          `<div class="carousel-item">
             <figure class="item__img">
-                <img data-src=${posterImage.medium} data-background-img=${backGroundImg}  data-src-tiny=${posterImage.tiny} alt="img-movie">
+                <img data-src=${posterImage.medium} data-background-img=${backGroundImg} alt="img-movie">
             </figure>
             <div class="carousel-item__details">
                 <div class="carousel-item__details--iconos">
