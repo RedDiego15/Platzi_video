@@ -1,5 +1,7 @@
 import registerImage from '@js/lazy.js'
 import backGroundImg from '@assets/carousel-item-placeholder.png'
+import playIcon from "@assets/play-icon.png";
+import plusIcon from "@assets/plus-icon.png";
 
 const templateCarouselItem = ({ itemList = [] }) =>{
     const nodes = itemList.map(({
@@ -20,12 +22,12 @@ const templateCarouselItem = ({ itemList = [] }) =>{
                     data-video-id= ${youtubeVideoId}
                     class="details__icon play_icon">
                         <figure >
-                            <img src="../src/assets//play-icon.png" alt="img-movie">
+                            <img src=${playIcon} alt="img-movie">
                         </figure>
                     </a>
                     <a href="https://kitsu.io/explore/anime${slug}" class="details__icon" target=_blank>
                         <figure >
-                            <img src="../src/assets/plus-icon.png" alt="img-movie">
+                            <img src="${plusIcon}" alt="img-movie">
                         </figure>
                     </a>
                     
