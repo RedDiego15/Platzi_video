@@ -6,6 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: './src/js/index.js',
@@ -13,6 +14,7 @@ module.exports = {
         path: path.resolve(__dirname,'dist'),
         publicPath: '/dist/',
         filename: '[name].bundle.js',
+        clean:true
     },
     mode: "production",
     resolve :{
@@ -34,7 +36,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use:[MiniCssExtractPlugin.loader,
+                use:[//MiniCssExtractPlugin.loader,
                     'style-loader',
                     'css-loader',
                     ],
@@ -50,19 +52,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: true,
             template: './public/index.html',
-            filename:'./index.html'
+            filename:'./index.html',
+            minify:true
         }),
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: './public/login.html',
-            filename:'./login.html'
-        }),
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: './public/register.html',
-            filename:'./register.html'
-        }),
-
         new CopyPlugin({
             patterns:[
                 {
@@ -74,7 +66,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename:'src/styles.css'
         }),
-        new Dotenv()
+        new Dotenv(),
+        new BundleAnalyzerPlugin({
+            analyzerPort:8080
+        }),
     ],
     optimization: {
         minimize:true,

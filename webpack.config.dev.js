@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 module.exports = {
     entry: './src/js/index.js',
@@ -14,6 +16,7 @@ module.exports = {
     },
     mode: "development",
     watch: true,
+    devtool:true,
     resolve :{
         extensions: ['.js'],
         alias: {
@@ -63,7 +66,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename:'src/[name].css'
         }),
-        new Dotenv()
+        new Dotenv(),
+        new BundleAnalyzerPlugin()
     ],
     
 

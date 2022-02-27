@@ -3,7 +3,7 @@ const modalListener = (event) => {
     
     const videoId = link.dataset.videoId;
     debugger;
-    if(link && link.classList.contains('details__icon')){
+    if(link && link.classList.contains('play_icon')){
         //lazy load
         event.preventDefault();
         import( /* webpackChunkName: "modal-lib" */ './open-modal').then(({openModal}) => {

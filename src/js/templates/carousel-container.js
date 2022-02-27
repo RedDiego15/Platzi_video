@@ -17,12 +17,12 @@ const templateCarouselItem = ({ itemList = [] }) =>{
                 <div class="carousel-item__details--iconos">
                     <a href="https://www.youtube.com/watch?v=${youtubeVideoId}"
                     data-video-id= ${youtubeVideoId}
-                    class="details__icon">
+                    class="details__icon play_icon">
                         <figure >
                             <img src="../src/assets//play-icon.png" alt="img-movie">
                         </figure>
                     </a>
-                    <a href="https://kitsu.io/explore/anime${slug}" class="details__icon">
+                    <a href="https://kitsu.io/explore/anime${slug}" class="details__icon" target=_blank>
                         <figure >
                             <img src="../src/assets/plus-icon.png" alt="img-movie">
                         </figure>

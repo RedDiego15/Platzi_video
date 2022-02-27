@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
     <meta name="description"           
     content="Working in an advance responsive design">
     <title>Platzi video</title>
@@ -74,10 +77,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 <script >
     WebFont.load({
-    google: {
-        families: ['DM+Sans'],
-    },
+        google: {
+            families: ['DM+Sans'],
+        },
     })
 </script>
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous" defer></script>
+<script>
+    if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('./sw.js')
+    }
+</script> 
 </html>

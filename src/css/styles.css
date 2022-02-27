@@ -9,7 +9,6 @@
     --title_Carousel_Color: #F05454;
 }
 
-
 html {
     font-size: 62.5%;
     font-family: Helvetica,sans-serif;
@@ -200,7 +199,9 @@ HEADER
     will-change: opacity;
     position: relative;
     min-width: 33.33%; 
+    max-width: 200px;
     height:80%;/* cambio responsive*/
+    max-height: 200px;
     transition: 450ms all;
     box-shadow: 5px 5px 10px rgba(0,0,0, .3);
     transform-origin: center left; 
