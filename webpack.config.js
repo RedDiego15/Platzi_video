@@ -9,7 +9,10 @@ const Dotenv = require('dotenv-webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry:{
+        index: {import: './src/js/index.js'},
+        sw:{import: './src/service-worker/sw.js'}
+},
     output:{ 
         path: path.resolve(__dirname,'dist'),
         publicPath: '/dist/',

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../src/css/styles.css"> -->
 
     <link rel="stylesheet" as="image" href="../src/assets/logo-platzi-video.png">
     <!--Preconect and fetch-->
@@ -19,6 +18,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="../src/css/desktop.css" media="screen and (min-widht:760px)"  >
 
     <meta name="description"           
     content="Working in an advance responsive design">
@@ -85,7 +86,7 @@
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous" defer></script>
 <script>
     if('serviceWorker' in navigator){
-        navigator.serviceWorker.register('./sw.js')
+        navigator.serviceWorker.register('./sw.bundle.js')
     }
 </script> 
 </html>

@@ -1,0 +1,7 @@
+.header{
+    height:14vh;
+}
+.carousel-item{
+    min-width: 20%;
+    max-height: none;
+}

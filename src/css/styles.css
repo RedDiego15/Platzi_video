@@ -199,7 +199,6 @@ HEADER
     will-change: opacity;
     position: relative;
     min-width: 33.33%; 
-    max-width: 200px;
     height:80%;/* cambio responsive*/
     max-height: 200px;
     transition: 450ms all;
