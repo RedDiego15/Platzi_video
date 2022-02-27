@@ -6,7 +6,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry:{
@@ -70,9 +69,7 @@ module.exports = {
             filename:'src/styles.css'
         }),
         new Dotenv(),
-        new BundleAnalyzerPlugin({
-            analyzerPort:8080
-        }),
+        
     ],
     optimization: {
         minimize:true,
