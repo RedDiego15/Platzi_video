@@ -2,7 +2,6 @@ const modalListener = (event) => {
     const link = event.target.parentNode.parentNode
     
     const videoId = link.dataset.videoId;
-    debugger;
     if(link && link.classList.contains('play_icon')){
         //lazy load
         event.preventDefault();

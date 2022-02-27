@@ -239,7 +239,11 @@ HEADER
     color:white;
     transition: 450ms opacity;
     line-height: 1.2;
+    font-size:1rem;
     opacity: 0;
+ }
+ .carousel-item__details p{
+    font-size:1rem;
  }
  .carousel-item__details--iconos{
     display: flex;
@@ -283,6 +287,10 @@ HEADER
         min-width: 20%;
         max-height: none;
     }
+    .carousel-item__details p{
+        font-size:1.6rem;
+     }
+
   }
  
 

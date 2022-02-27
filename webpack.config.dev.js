@@ -22,7 +22,8 @@ module.exports = {
         alias: {
             '@styles': path.resolve(__dirname, './src/css/'),
             '@js': path.resolve(__dirname, './src/js/'),
-            '@templates': path.resolve(__dirname, './src/js/templates/')
+            '@templates': path.resolve(__dirname, './src/js/templates/'),
+            '@assets': path.resolve(__dirname, './src/assets/')
         }   
     }, 
     module:{
@@ -56,12 +57,14 @@ module.exports = {
         }),
 
         new CopyPlugin({
-            patterns:[
+            patterns: [
                 {
-                    from: path.resolve(__dirname, "src","assets"),
-                    to: "assets"
+                from: path.resolve(__dirname, "src","assets"),
+                to: "assets"
                 }
+            
             ]
+
         }),
         new MiniCssExtractPlugin({
             filename:'src/[name].css'
