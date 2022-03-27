@@ -40,23 +40,14 @@ HEADER
     justify-content: space-between;
     align-items: flex-start;
     height: 18vh;
-    max-width: 100%;
+    width: 100%;
     padding-top: 1.5rem;
     
 }
 
-.header__logo-container,
-.header__logo-container img {
-    margin-left:0.5rem;
-    width:18rem;
-    height: 6rem;
-}
-
-.header__perfil-container, 
 .header__img{
     width: 4.5rem;
     height:6rem;
-    color:white
     
 }
 
@@ -66,7 +57,9 @@ HEADER
     justify-content: space-between;
     align-items: center;
     margin-right: 2rem;
-    min-width: 10rem;
+    width: 10rem;
+    color:white;
+
     
 }
 .header__list{
@@ -96,9 +89,10 @@ HEADER
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
     align-items: center;
-    min-height: 7rem;
+    height: 9rem;
+    width: 100%;
+    
 }
 .search__title {
     font-size: 2.6rem;
@@ -114,6 +108,7 @@ HEADER
     border-radius: 4rem;
     padding: 0 1rem;
     outline: none;
+    color:white;
  }
  .search__input::placeholder{
      color: white;
@@ -124,6 +119,7 @@ HEADER
  .carousel-container {
      position: relative;
      padding:2rem 1rem 0;
+     max-height: 98rem;
  }
  .carousel__info-content{
     display: flex;
@@ -259,10 +255,8 @@ HEADER
     position: relative;
     display: flex;
     align-items:center;
-    background-color:var(--title_Carousel_Color);
     width:100%;
-    min-width: 16rem;
-    min-height: 10vh;
+    height: 10vh;
     padding-left: 1rem;
 }
 .index-footer{
