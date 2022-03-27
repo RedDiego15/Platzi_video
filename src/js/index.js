@@ -11,6 +11,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   const popular = await fetchPopular();
   const highestRated = await fetchHighestRated();
 
+  debugger
+  if(trending){
+    const loading = document.querySelectorAll('.carousel');
+    [...loading].map((node) => node.remove())
+  }
+
  
   addCarouselNode({itemList:trending},'Trending');
   addCarouselNode({itemList:popular},'Popular');
