@@ -119,7 +119,6 @@ HEADER
  .carousel-container {
      position: relative;
      padding:2rem 1rem 0;
-     height: 98rem;
  }
  .carousel__info-content{
     display: flex;
